@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Add `forceNewTerminalWhenRunningWatchCommands` config (defaults to `false`) to force creating a new terminal instance when running watch commands
+
 ## [1.7.1] = 2021-05-31
 
 - Fix jump to tests for multi-workspace projects
