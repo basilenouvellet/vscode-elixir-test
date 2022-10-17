@@ -28,7 +28,7 @@ function handler(folderUri) {
     const testPathFilter = validations.getTestPathFilter(isUmbrella, isWindows);
     const terminal = vscode.window.activeTerminal || vscode.window.createTerminal();
     terminal.sendText(`mix test ${selectedFolder.match(testPathFilter)[1]}`);
-    if (config.focusOnTerminalAfterTest) terminal.show();
+    if (config.openTerminalAfterTest) terminal.show(!config.focusOnTerminalAfterTest);
   } else {
     vscode.window.showInformationMessage(
       'This folder is not a test folder.',

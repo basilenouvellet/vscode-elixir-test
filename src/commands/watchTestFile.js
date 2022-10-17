@@ -21,7 +21,7 @@ function handler() {
       ? vscode.window.createTerminal()
       : vscode.window.activeTerminal || vscode.window.createTerminal();
     terminal.sendText(`mix test.watch ${openedFilename.match(testPathFilter)[1]}`);
-    if (config.focusOnTerminalAfterTest) terminal.show();
+    if (config.openTerminalAfterTest) terminal.show(!config.focusOnTerminalAfterTest);
   } else {
     vscode.window.showInformationMessage(
       'The current file is not a test file.',

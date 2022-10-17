@@ -19,7 +19,7 @@ function handler() {
     const testPathFilter = validations.getTestPathFilter(isUmbrella, isWindows);
     const terminal = vscode.window.activeTerminal || vscode.window.createTerminal();
     terminal.sendText(`mix test ${openedFilename.match(testPathFilter)[1]}`);
-    if (config.focusOnTerminalAfterTest) terminal.show();
+    if (config.openTerminalAfterTest) terminal.show(!config.focusOnTerminalAfterTest);
   } else {
     vscode.window.showInformationMessage(
       'The current file is not a test file.',

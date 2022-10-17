@@ -26,7 +26,7 @@ function handler() {
     terminal.sendText(
       `mix test ${openedFilename.match(testPathFilter)[1]}:${cursorLine}`,
     );
-    if (config.focusOnTerminalAfterTest) terminal.show();
+    if (config.openTerminalAfterTest) terminal.show(!config.focusOnTerminalAfterTest);
   } else {
     vscode.window.showInformationMessage(
       'The current file is not a test file.',

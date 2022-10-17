@@ -110,6 +110,11 @@
       "title": "vscode-elixir-test",
       "type": "object",
       "properties": {
+        "vscode-elixir-test.openTerminalAfterTest": {
+          "type": "boolean",
+          "default": true,
+          "description": "Open terminal panel after test"
+        },
         "vscode-elixir-test.focusOnTerminalAfterTest": {
           "type": "boolean",
           "default": true,

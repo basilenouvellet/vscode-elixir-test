@@ -30,7 +30,7 @@ function handler(folderUri) {
       ? vscode.window.createTerminal()
       : vscode.window.activeTerminal || vscode.window.createTerminal();
     terminal.sendText(`mix test.watch ${selectedFolder.match(testPathFilter)[1]}`);
-    if (config.focusOnTerminalAfterTest) terminal.show();
+    if (config.openTerminalAfterTest) terminal.show(!config.focusOnTerminalAfterTest);
   } else {
     vscode.window.showInformationMessage(
       'This folder is not a test folder.',
