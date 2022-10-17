@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Add `openTerminalAfterTest` config (defaults to `true`) to show the terminal pane when running a command
+- Fix `focusOnTerminalAfterTest` config which controlled whether to show the terminal pane rather than the focus
 - Add `forceNewTerminalWhenRunningWatchCommands` config (defaults to `false`) to force creating a new terminal instance when running watch commands
 
 ## [1.7.1] = 2021-05-31
