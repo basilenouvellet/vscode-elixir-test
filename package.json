@@ -114,6 +114,11 @@
           "type": "boolean",
           "default": true,
           "description": "Get focus on terminal panel after test"
+        },
+        "vscode-elixir-test.forceNewTerminalWhenRunningWatchCommands": {
+          "type": "boolean",
+          "default": false,
+          "description": "Always create a new terminal instance when running watch commands"
         }
       }
     }

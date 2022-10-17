@@ -22,7 +22,9 @@ function handler() {
 
   if (isTestFile === true) {
     const testPathFilter = validations.getTestPathFilter(isUmbrella, isWindows);
-    const terminal = vscode.window.activeTerminal || vscode.window.createTerminal();
+    const terminal = config.forceNewTerminalWhenRunningWatchCommands
+      ? vscode.window.createTerminal()
+      : vscode.window.activeTerminal || vscode.window.createTerminal();
     terminal.sendText(
       `mix test.watch ${openedFilename.match(testPathFilter)[1]}:${cursorLine}`,
     );

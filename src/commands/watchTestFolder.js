@@ -26,7 +26,9 @@ function handler(folderUri) {
 
   if (isTestFolder === true) {
     const testPathFilter = validations.getTestPathFilter(isUmbrella, isWindows);
-    const terminal = vscode.window.activeTerminal || vscode.window.createTerminal();
+    const terminal = config.forceNewTerminalWhenRunningWatchCommands
+      ? vscode.window.createTerminal()
+      : vscode.window.activeTerminal || vscode.window.createTerminal();
     terminal.sendText(`mix test.watch ${selectedFolder.match(testPathFilter)[1]}`);
     if (config.focusOnTerminalAfterTest) terminal.show();
   } else {
